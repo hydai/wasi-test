@@ -165,6 +165,33 @@ def test_wasmtime(filepath, config, cwd):
 
     test(cmd, config, cwd)
 
+def test_ssvm(filepath, config):
+    cmd = ['ssvmc', filepath, filepath+'.so']
+    result = subprocess.run(cmd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 10), capture_output=True)
+
+    cmd = ['ssvmr']
+
+    env = config.get('env')
+    if env != None:
+        for key in env:
+            cmd.append('--env')
+            cmd.append(key + '=' + env[key])
+
+    preopens = config.get('preopens')
+    if preopens != None:
+        for path in preopens:
+            cmd.append('--dir')
+            cmd.append(path + ':' + preopens[path])
+
+    cmd.append(filepath+'.so')
+
+    args = config.get('args')
+    if args != None:
+        for arg in args:
+            cmd.append(arg)
+
+    test(cmd, config)
+
 def main():
     inputs = []
     inputs.extend(sorted(glob.glob("target/wasm32-wasi/**/*.wasm")))
@@ -174,6 +201,7 @@ def main():
             "node": test_node,
             "wasmer": test_wasmer,
             "wasmtime": test_wasmtime,
+            "ssvm": test_ssvm,
     }
 
     for filepath in inputs:
