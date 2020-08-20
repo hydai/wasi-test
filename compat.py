@@ -9,9 +9,15 @@ import sys
 import tempfile
 import textwrap
 
+def check_py_version_3_8():
+    if sys.version_info.major == 3 and sys.version_info.minor >= 8:
+        return True
+    return False
+
 def assert_result(actual, expected):
-    assert(actual.stdout == expected.get('stdout', ''))
-    assert(actual.stderr == expected.get('stderr', ''))
+    if check_py_version_3_8():
+        assert(actual.stdout == expected.get('stdout', ''))
+        assert(actual.stderr == expected.get('stderr', ''))
     assert(actual.returncode == expected.get('exitCode', 0))
 
 def ensure_empty_dir(path):
@@ -28,7 +34,10 @@ def load_config(filepath):
     return config
 
 def test(cmd, config, cwd):
-    result = subprocess.run(cmd, cwd=cwd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 5), capture_output=True)
+    if check_py_version_3_8():
+        result = subprocess.run(cmd, cwd=cwd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 5), capture_output=True)
+    else:
+        result = subprocess.run(cmd, cwd=cwd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 5))
     assert_result(result, config)
 
 def test_deno(filepath, config, cwd):
@@ -165,10 +174,12 @@ def test_wasmtime(filepath, config, cwd):
 
     test(cmd, config, cwd)
 
-def test_ssvm(filepath, config):
+def test_ssvm(filepath, config, cwd):
     cmd = ['ssvmc', filepath, filepath+'.so']
-    result = subprocess.run(cmd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 10), capture_output=True)
-
+    if check_py_version_3_8():
+        subprocess.run(cmd, cwd=cwd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 10), capture_output=True)
+    else:
+        subprocess.run(cmd, cwd=cwd, encoding='utf8', input=config.get('stdin'), timeout=config.get('timeout', 10))
     cmd = ['ssvmr']
 
     env = config.get('env')
@@ -189,8 +200,30 @@ def test_ssvm(filepath, config):
     if args != None:
         for arg in args:
             cmd.append(arg)
+    test(cmd, config, cwd)
 
-    test(cmd, config)
+def test_ssvm_interp(filepath, config, cwd):
+    cmd = ['ssvm']
+
+    env = config.get('env')
+    if env != None:
+        for key in env:
+            cmd.append('--env')
+            cmd.append(key + '=' + env[key])
+
+    preopens = config.get('preopens')
+    if preopens != None:
+        for path in preopens:
+            cmd.append('--dir')
+            cmd.append(path + ':' + preopens[path])
+
+    cmd.append(filepath)
+
+    args = config.get('args')
+    if args != None:
+        for arg in args:
+            cmd.append(arg)
+    test(cmd, config, cwd)
 
 def main():
     inputs = []
@@ -201,7 +234,8 @@ def main():
             "node": test_node,
             "wasmer": test_wasmer,
             "wasmtime": test_wasmtime,
-            "ssvm": test_ssvm,
+            "ssvmr": test_ssvm,
+            "ssvm": test_ssvm_interp,
     }
 
     for filepath in inputs:
@@ -214,7 +248,6 @@ def main():
         config = load_config(matches[0])
 
         workdir = tempfile.mkdtemp()
-        shutil.copytree("fixtures", os.path.join(workdir, "fixtures"), symlinks=True)
 
         sys.stdout.write('test ')
         sys.stdout.write(filepath)
@@ -223,6 +256,8 @@ def main():
 
         for name in tests:
             ensure_empty_dir('scratch')
+            ensure_empty_dir(workdir)
+            shutil.copytree("fixtures", os.path.join(workdir, "fixtures"), symlinks=True)
             sys.stdout.write('  ')
             sys.stdout.write(name)
             sys.stdout.write(' ... ')
