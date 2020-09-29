@@ -1,0 +1,273 @@
+test target/wasm32-wasi/debug/std_env_args.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_create_dir.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_create.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_metadata.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_metadata_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_metadata_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_seek.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_set_len.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_set_len_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_set_len_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_all.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_all_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_all_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_data.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_data_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_file_sync_data_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_hard_link.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_metadata.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_metadata_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_metadata_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_read.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_read_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_read_dir.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_read_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_remove_dir_all.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_remove_dir_all_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_remove_dir_all_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_rename.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_symlink_metadata.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/std_fs_symlink_metadata_absolute.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_symlink_metadata_relative.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/std_fs_write.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/wasi_clock_time_get.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/wasi_clock_time_get_process.wasm ... 
+  deno ... [92mok[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/wasi_clock_time_get_realtime.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [92mok[0m
+  wasmer ... [92mok[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/wasi_fd_fdstat_get.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [91mFAILED[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [91mFAILED[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/wasi_fd_renumber.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [91mFAILED[0m
+  ssvm ... [91mFAILED[0m
+test target/wasm32-wasi/debug/wasi_fd_tell_file.wasm ... 
+  deno ... [91mFAILED[0m
+  node ... [92mok[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
+test target/wasm32-wasi/debug/wasi_fd_write_file.wasm ... 
+  deno ... [92mok[0m
+  node ... [92mok[0m
+  wasmer ... [91mFAILED[0m
+  wasmtime ... [92mok[0m
+  ssvmr ... [92mok[0m
+  ssvm ... [92mok[0m
